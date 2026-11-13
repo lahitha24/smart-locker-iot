@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Locker Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Smart Locker</h1>
+            <p>IoT Security Monitoring Dashboard</p>
+        </div>
+        <span class="demo-tag">DEMO APPLICATION</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h2>Locker Monitoring</h2>
+                <p>Manage locker access and monitor security events.</p>
+            </div>
+            <div class="locker-icon">🔐</div>
+        </section>
+
+        <section class="status-grid">
+
+            <div class="card">
+                <p class="card-label">Locker Status</p>
+                <h2 id="lockerStatus" class="status locked">
+                    LOCKED
+                </h2>
+                <p id="statusMessage">Your locker is secure.</p>
+            </div>
+
+            <div class="card">
+                <p class="card-label">Security Status</p>
+                <h2 id="securityStatus" class="status safe">
+                    SAFE
+                </h2>
+                <p id="securityMessage">No security alerts.</p>
+            </div>
+
+            <div class="card">
+                <p class="card-label">Incorrect Attempts</p>
+                <h2 id="attemptCount">0 / 3</h2>
+                <p>Maximum allowed attempts</p>
+            </div>
+
+        </section>
+
+        <section class="main-grid">
+
+            <div class="card">
+                <h3>OTP Verification</h3>
+                <p class="description">
+                    Generate an OTP and verify it to unlock your locker.
+                </p>
+
+                <button id="generateBtn" class="primary-btn">
+                    Generate OTP
+                </button>
+
+                <div class="sms-box">
+                    <h4>📩 Simulated SMS Notification</h4>
+                    <p id="smsMessage">
+                        No OTP generated yet.
+                    </p>
+                    <small>Demo only — no actual SMS is sent.</small>
+                </div>
+
+                <label for="otpInput">Enter OTP</label>
+                <input
+                    type="text"
+                    id="otpInput"
+                    maxlength="4"
+                    inputmode="numeric"
+                    placeholder="Enter 4-digit OTP"
+                >
+
+                <button id="verifyBtn" class="success-btn">
+                    Verify OTP
+                </button>
+
+                <button id="relockBtn" class="secondary-btn">
+                    Lock Locker
+                </button>
+
+                <p id="feedback" class="feedback" aria-live="polite"></p>
+            </div>
+
+            <div class="card">
+                <h3>Security Controls</h3>
+                <p class="description">
+                    Simulate a security event for demonstration.
+                </p>
+
+                <div class="alert-box">
+                    <span>🚨</span>
+                    <div>
+                        <strong>Tamper Detection</strong>
+                        <p>Simulate unauthorized physical access.</p>
+                    </div>
+                </div>
+
+                <button id="tamperBtn" class="danger-btn">
+                    Simulate Tamper Alert
+                </button>
+
+                <div class="alarm-box" id="alarmBox">
+                    <h4>🔔 Security Alarm</h4>
+                    <p id="alarmMessage">
+                        No active alarm.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="card history-card">
+            <div class="history-header">
+                <div>
+                    <h3>Activity History</h3>
+                    <p class="description">
+                        Recent locker activities and security events.
+                    </p>
+                </div>
+                <button id="clearHistoryBtn" class="clear-btn">
+                    Clear History
+                </button>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <p>No activities recorded yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Smart Locker with OTP Verification and Tamper Detection
+        <p>College Practical Project | Software Demonstration</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
